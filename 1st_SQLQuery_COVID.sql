@@ -55,7 +55,7 @@ SELECT	SUM(DISTINCT(population)) as TotalPopulation,
 		SUM(new_deaths)/SUM(DISTINCT(population))*100 as PercentPopulationDeath
 FROM	CovidSEA
 
--- Let’s break things down by countries
+-- Letâ€™s break things down by countries
 SELECT	location,
 		MAX(DISTINCT(population)) as population,
 		SUM(new_cases) as TotalCases,
@@ -67,7 +67,7 @@ FROM	CovidSEA
 GROUP BY location
 ORDER BY 1;
 
--- Let’s deep down to vaccinations in SEA
+-- Letâ€™s deep down to vaccinations in SEA
 WITH VacSEA(TotalPopulation, TotalDoses, TotalPartlyVaccinated, TotalFullyVaccinated) AS
 	(
 	SELECT	SUM(DISTINCT population) AS TotalPopulation,
